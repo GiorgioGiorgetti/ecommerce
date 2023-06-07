@@ -1,0 +1,308 @@
+<html><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Cart</title>
+</head>
+<style>
+
+    .main_content{
+        display: flex;
+        flex-direction: column;
+    }
+    .total_menu_bar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 90px;
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+        box-shadow: 0px -3px 5px #0000000e;
+        background-color: white;
+    }
+    .total_menu_bar_div{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 60%;
+    }
+    .total_menu_bar_price{
+        display: flex;
+        align-items: baseline;
+        gap: 15px;
+    }
+    .total_menu_bar_price p:nth-child(2){
+        font-size: 30px;
+        font-weight: 200;
+    }
+    .total_menu_bar_price p:nth-child(1){
+        font-size: 30px;
+        font-weight: 300;
+    }
+    .total_menu_bar_checkout a{
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: solid 1px ;
+        color: white;
+        background-color: black;
+        width: 250px;
+        font-weight: 300;
+        transition: 250ms;
+        font-size: 25px;
+    }
+    .total_menu_bar_checkout a:hover{
+        color: black;
+        background-color: white
+    }
+
+    .cart_main_content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0px;
+        margin-bottom: 90px;
+    }
+    .template_main_cnt_section{
+        height: 250px;
+        display: flex;
+        align-items: center;
+        width: 60%;
+        justify-content: space-between;
+    }
+    .template_main_cnt_section_img img{
+        max-width: 100%;
+        max-height: 230px;
+    }
+
+    .cart_div_center{
+        display: flex;
+        align-items: center;
+        min-width: 200px;
+    }
+    .template_main_cnt_section_title{
+        height: 230px;
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        justify-content: space-between;
+    }
+    .template_main_cnt_section_title_top{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .template_main_cnt_section_title_top p:nth-child(1){
+        font-size: 45px;
+        font-weight: 500;
+    }
+    .template_main_cnt_section_title_top p:nth-child(2){
+        font-size: 25px;
+        font-weight: 300;
+    }
+    .template_main_cnt_section_title_top a{
+        font-weight: 300;
+        font-size: 18px;
+        border-bottom: solid 1px;
+    }
+    .template_main_cnt_section_title_bottom{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .template_main_cnt_section_title_bottom label{
+        font-weight: 200;
+        font-size: 20px
+    }
+    .template_main_cnt_section_title_bottom input{
+        width: 40px;
+        border: none;
+        outline: none;
+        text-align: center;
+        font-size: 18px
+    }
+    .template_main_cnt_section_title_bottom  img{
+        height: 15px;
+    }
+
+    @media (max-width: 1300px){
+        .template_main_cnt_section,.total_menu_bar_div{
+            width: 90%;
+        }
+        .template_main_cnt_section_title_top p:nth-child(1) {
+            font-size: 40px;
+        }
+    }
+    @media (max-width: 800px){
+        .template_main_cnt_section_title_top p:nth-child(1) {
+            font-size: 30px;
+        }
+        .template_main_cnt_section_title_top p:nth-child(2) {
+            font-size: 20px;
+        }
+        .template_main_cnt_section_title_top a {
+            font-size: 14px;
+        }
+    }
+    @media (max-width: 600px){
+        .template_main_cnt_section_title_top p:nth-child(1) {
+            font-size: 25px;
+        }
+        .template_main_cnt_section_title_top p:nth-child(2) {
+            font-size: 18px;
+        }
+        .template_main_cnt_section_title_top a {
+            font-size: 14px;
+        }
+        .template_main_cnt_section{
+            height: 170px
+        }
+        .template_main_cnt_section_title{
+            height: 160px
+        }
+        .template_main_cnt_section_img img{
+            max-height: 160px;
+        }
+        .template_main_cnt_section_title_bottom {
+            flex-direction: column;
+            align-items: baseline;
+        }
+        .template_main_cnt_section_img{
+            min-width: 0px;
+        }
+        .template_main_cnt_section_title_bottom label {
+            font-size: 15px;
+        }
+        .template_main_cnt_section_title_bottom img {
+            height: 10px;
+        }
+
+        .total_menu_bar_div{
+            flex-direction: column;
+            gap: 10px;
+        }
+        .total_menu_bar_price{
+            gap: 5px;
+        }
+        .total_menu_bar_price p{
+            font-size: 20px !important;
+            font-weight: 400 !important;
+        }
+        .total_menu_bar_checkout a{
+            width: 150px;
+        }
+        .total_menu_bar {
+            height: 120px;
+        }
+        .cart_main_content{
+            margin-bottom: 120px;
+        }
+        .template_main_cnt_section_title_bottom{
+            align-items: flex-end;
+        }
+    }
+    @media (max-width: 400px){
+        .template_main_cnt_section{
+            flex-direction: column;
+            height: 300px;
+        }
+        .cart_main_content{
+            gap: 20px
+        }
+        .template_main_cnt_section_title{
+            margin-left: 0px;
+        }
+        .template_main_cnt_section_title_top,.template_main_cnt_section_title_bottom{
+            align-items: center
+        }
+        
+    }
+</style>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500&display=swap');
+
+        :root {
+            --font: 'Outfit', sans-serif;
+        }
+
+        p {
+            margin: 0px;
+        }
+
+        ::-webkit-scrollbar {
+            height: 7px;
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgb(109, 109, 109);
+            border-radius: 5px;
+        }
+
+        html,body {
+            margin: 0px;
+            padding: 0px;
+            font-family: var(--font);
+        }
+
+        a,button {
+            cursor: pointer;
+        }
+        a{
+            text-decoration: none;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+    <section class="main_content">
+
+        <div class="cart_main_content">
+            <section class="template_main_cnt_section" id="cart_template">
+                <div class="template_main_cnt_section_img cart_div_center">
+                    <img src="" alt="" id="template_img">
+                </div>
+                <div class="template_main_cnt_section_title">
+                    <div class="template_main_cnt_section_title_top">
+                        <p id="template_title"></p>
+                        <p id="template_option"></p>
+                        <a id="template_remove">remove</a>
+                    </div>
+                    <div class="template_main_cnt_section_title_bottom">
+                        <label id="template_price"></label>
+                        <div>
+                            <a id="template_subtract_btn">
+                                <img src="/icon/minus.png" alt="">
+                            </a>
+                            <input type="text" value="0" id="template_quantity">
+                            <a id="template_add_btn">
+                                <img src="/icon/plus.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- total menu  -->
+        <section>
+            <div class="total_menu_bar">
+                <div class="total_menu_bar_div">
+                    <div class="total_menu_bar_price">
+                        <p>Total:</p>
+                        <p id="cart_total"></p>
+                    </div>
+                    <div class="total_menu_bar_checkout">
+                        <a id="chekout_btn">Checkout</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+<script src="/cart.js"></script>
+</body>
+</html>

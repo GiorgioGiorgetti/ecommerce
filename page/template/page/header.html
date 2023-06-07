@@ -1,0 +1,187 @@
+<section class="section_header"><style>
+    .nav {
+        position: fixed;
+        z-index: 200;
+        box-shadow: 0px 3px 5px #00000028;
+        width: 100%;
+        height: 52px;
+        background-color: white !important;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .nav :nth-child(3) {
+        justify-content: end;
+    }
+    .nav_div {
+        display: flex;
+        align-items: center;
+        padding: 0px 20px;
+    }
+    .nav_center{
+        justify-content: center;
+    }
+    .nav img {
+        height: 30px;
+    }
+    .nav_menu_a{
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .nav_left_group_container{
+        position: absolute;
+        box-shadow: 0px 3px 5px #00000028;
+        top: 52px;
+        background-color: white;
+        padding: 0px 10px;
+    }
+    .nav_left_group_container ul{
+        list-style-type: none;
+        padding: 0px 10px;
+    }
+    .nav_left_group_container ul li{
+        padding: 3px 0px;
+    }
+    .nav_left_group_container ul a{
+        text-decoration: none;
+        color: black;
+    }
+    .nav_cart_counter{
+        position: absolute;
+        top: 3;
+        margin-left: 14px;
+        padding: 2px 6px;
+        color: white;
+        background-color: red;
+        border-radius: 50px;
+        font-size: 13px;
+    }
+    .nav_cart img{
+        height: 25px;
+    }
+
+
+    .nav_right_group_container{
+        position: absolute;
+        box-shadow: 0px 3px 5px #00000028;
+        top: 52px;
+        right: 10px;
+        background-color: white;
+        padding: 15px 10px;
+    }
+    .nav_right_group_container a{
+        color: white;
+        border: solid 1px black;
+        background-color: black;
+        font-size: 18px;
+        font-weight: 200;
+        padding: 5px 20px;
+        transition: 250ms;
+    }
+    .nav_right_group_container a:hover{
+        color: black;
+        font-weight: 300;
+        background-color: white;
+    }
+
+</style>
+
+<div class="nav">
+
+    <div class="nav_div nav_left">
+
+        <a id="nav_menu_icon" class="nav_menu_a"><img src="/icon/menu_black.png" alt=""></a>
+        
+        <div class="nav_left_group_container hide" id="nav_group_div">
+            <ul id="nav_group"></ul>
+        </div>
+
+    </div>
+
+    <div class="nav_div nav_center">
+
+        <a href="/"><img alt="" id="nav_group_logo_img" src="/product/"></a>
+    
+    </div>
+
+    <div class="nav_div">
+        
+        <a href="/cart" class="nav_cart">
+            <div class="nav_cart_div">
+                <div class="nav_cart_counter" id="nav_cart_counter">
+                    0
+                </div>
+                <img src="/icon/cart.svg" alt="">
+            </div>
+        </a>
+
+        <div class="nav_right_group_container hide" id="nav_cart_div">
+            <a href="/cart">Checkout</a>
+        </div>
+
+    </div>
+
+</div>
+<section style="height: 52px;"></section>
+
+<script type="text/javascript">
+    const menu = document.getElementById("nav_menu_icon");
+    const group_div = document.getElementById("nav_group_div");
+
+    let menu_over = 0;
+    let group_over = 0;
+
+
+    menu.onmouseover = ()=>{
+        menu_over = 1;
+        group_over = 0;
+
+        display_class();
+    }
+    menu.onmouseout = ()=>{
+        menu_over = 0;
+
+        display_class();
+    }
+    
+    group_div.onmouseover = ()=>{
+        group_over = 1;
+
+        display_class();
+    }
+    group_div.onmouseout = ()=>{
+        group_over = 0;
+
+        display_class();
+    }
+
+    function display_class(){
+
+        if(menu_over + group_over > 0){
+            group_div.classList.remove("hide");
+        }else{
+            group_div.classList.add("hide");
+        }
+    } 
+    
+    let click = false;
+
+    menu.onclick = ()=>{
+        
+        if(click == false){
+
+            click = true;
+            menu_over = 0;
+            group_over = 0;
+
+            group_div.classList.remove("hide");
+        }else{
+
+            click = false;
+            menu_over = 0;
+            group_over = 0;
+
+            group_div.classList.add("hide");
+        }
+    }
+</script></section>

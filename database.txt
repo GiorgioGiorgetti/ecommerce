@@ -1,0 +1,234 @@
+-- Table: public.group_list
+
+-- DROP TABLE IF EXISTS public.group_list;
+
+CREATE TABLE IF NOT EXISTS public.group_list
+(
+    id_key bigint NOT NULL DEFAULT nextval('group_list_id_key_seq'::regclass),
+    name character varying(50) COLLATE pg_catalog."default",
+    main boolean DEFAULT false,
+    CONSTRAINT group_list_pkey PRIMARY KEY (id_key)
+)
+
+CREATE TABLE IF NOT EXISTS group_list
+(
+    id_key serial primary key,
+    name character varying(50),
+    main boolean DEFAULT false
+)
+
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.group_list
+    OWNER to server;
+
+
+
+
+-- Table: public.group_list_table
+
+-- DROP TABLE IF EXISTS public.group_list_table;
+
+CREATE TABLE IF NOT EXISTS public.group_list_table
+(
+    id_key bigint NOT NULL,
+    id character varying(40) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT group_list_table_pkey PRIMARY KEY (id_key, id)
+)
+
+
+CREATE TABLE IF NOT EXISTS group_list_table
+(
+    id_key bigint NOT NULL,
+    id character varying(40) NOT NULL,
+    PRIMARY KEY (id_key, id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.group_list_table
+    OWNER to server;
+
+
+
+-- Table: public.images
+
+-- DROP TABLE IF EXISTS public.images;
+
+CREATE TABLE IF NOT EXISTS public.images
+(
+    id character varying(40) COLLATE pg_catalog."default",
+    img_id_key integer NOT NULL DEFAULT nextval('images_img_id_key_seq'::regclass),
+    type character varying COLLATE pg_catalog."default",
+    CONSTRAINT images_pkey PRIMARY KEY (img_id_key)
+)
+
+CREATE TABLE IF NOT EXISTS images
+(
+    id character varying(40),
+    img_id_key serial NOT NULL ,
+    PRIMARY KEY (img_id_key)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.images
+    OWNER to server;
+
+
+
+
+
+-- Table: public.option_list
+
+-- DROP TABLE IF EXISTS public.option_list;
+
+CREATE TABLE IF NOT EXISTS public.option_list
+(
+    id_key bigint NOT NULL,
+    option_name character varying(50) COLLATE pg_catalog."default",
+    option_id smallint NOT NULL,
+    description_list text COLLATE pg_catalog."default",
+    CONSTRAINT option_list_pkey PRIMARY KEY (id_key, option_id)
+)
+
+CREATE TABLE IF NOT EXISTS option_list
+(
+    id_key bigint NOT NULL,
+    option_name character varying(50),
+    option_id smallint NOT NULL,
+    description_list text,
+    PRIMARY KEY (id_key, option_id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.option_list
+    OWNER to server;
+
+
+
+
+-- Table: public.option_list_table
+
+-- DROP TABLE IF EXISTS public.option_list_table;
+
+CREATE TABLE IF NOT EXISTS public.option_list_table
+(
+    id_key bigint NOT NULL,
+    option1 character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    option2 character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    option3 character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    price bigint DEFAULT 0,
+    quantity bigint DEFAULT 0,
+    CONSTRAINT option_list_table_pkey PRIMARY KEY (id_key, option1, option2, option3)
+)
+
+CREATE TABLE IF NOT EXISTS option_list_table
+(
+    id_key bigint NOT NULL,
+    option1 character varying(20),
+    option2 character varying(20),
+    option3 character varying(20),
+    price bigint DEFAULT 0,
+    quantity bigint DEFAULT 0,
+    PRIMARY KEY (id_key, option1, option2, option3)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.option_list_table
+    OWNER to server;
+
+
+
+
+
+-- Table: public.orders
+
+-- DROP TABLE IF EXISTS public.orders;
+
+CREATE TABLE IF NOT EXISTS public.orders
+(
+    id_key bigint NOT NULL DEFAULT nextval('orders_id_seq'::regclass),
+    stripe_cs_id character varying(255) COLLATE pg_catalog."default",
+    order_list text COLLATE pg_catalog."default",
+    address text COLLATE pg_catalog."default",
+    date date DEFAULT now(),
+    total_amount bigint,
+    user_email character varying(200) COLLATE pg_catalog."default",
+    phone character varying(15) COLLATE pg_catalog."default",
+    CONSTRAINT orders_pkey PRIMARY KEY (id_key),
+    CONSTRAINT orders_stripe_cs_id_key UNIQUE (stripe_cs_id)
+)
+
+
+CREATE TABLE IF NOT EXISTS public.orders
+(
+    id_key serial NOT NULL,
+    stripe_cs_id character varying(255),
+    order_list text,
+    address text,
+    date date DEFAULT now(),
+    total_amount bigint,
+    user_email character varying(200) ,
+    phone character varying(15) ,
+    PRIMARY KEY (id_key),
+    UNIQUE (stripe_cs_id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.orders
+    OWNER to server;
+
+
+
+
+
+-- Table: public.products
+
+-- DROP TABLE IF EXISTS public.products;
+
+CREATE TABLE IF NOT EXISTS public.products
+(
+    id_key integer NOT NULL DEFAULT nextval('products_id_key_seq'::regclass),
+    id character varying(40) COLLATE pg_catalog."default" NOT NULL,
+    option boolean DEFAULT false,
+    option1 character varying(50) COLLATE pg_catalog."default",
+    option2 character varying(50) COLLATE pg_catalog."default",
+    option3 character varying(50) COLLATE pg_catalog."default",
+    image character varying(30) COLLATE pg_catalog."default",
+    name character varying(30) COLLATE pg_catalog."default",
+    description text COLLATE pg_catalog."default",
+    quantity bigint DEFAULT 0,
+    price bigint DEFAULT 0,
+    CONSTRAINT products_pkey PRIMARY KEY (id_key),
+    CONSTRAINT products_id_key UNIQUE (id)
+)
+
+
+CREATE TABLE IF NOT EXISTS products
+(
+    id_key serial NOT NULL ,
+    id character varying(40) NOT NULL,
+    option boolean DEFAULT false,
+    option1 character varying(50),
+    option2 character varying(50) ,
+    option3 character varying(50),
+    image character varying(30),
+    name character varying(30),
+    description text,
+    quantity bigint DEFAULT 0,
+    price bigint DEFAULT 0,
+    PRIMARY KEY (id_key),
+    UNIQUE (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.products
+    OWNER to server;
+
+

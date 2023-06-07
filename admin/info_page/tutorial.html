@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap');
+   :root{
+        --font1: 35px;
+        --font2: 32px;
+        --font3: 25px;
+        --font4: 20px;
+        --font5: 18px;
+
+        --line-color: #9999998e;
+        --line-color2:#ececec8e;
+        --blue: #3376DB;
+    }
+    html,body{
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        font-family: 'Inter', sans-serif;
+        
+    }
+
+    body{
+        padding: 0px 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    a{
+        cursor: pointer;
+    }
+    .main{
+        width: auto;
+        max-width: 1200px;
+        /* background-color: white; */
+    }
+    .title{
+        font-size: var(--font1);
+        display: flex;
+        margin: 0px 90px;
+    }
+    .title h1{
+        letter-spacing: -2px;
+        font-weight: 600;
+    }
+    .title2{
+        font-size: var(--font2);
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 36px;
+        letter-spacing: -0.5px;
+    }
+    .context{
+        padding: 0px 90px;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 200px;
+    }
+
+    .indice{
+        display: flex;
+        align-items: center;
+        padding: 20px 0px;
+    }
+
+
+    .link_list li{
+        margin-bottom: 15px;
+    }
+    .link_list li a{
+        letter-spacing: -0.5px;
+        text-decoration: none;
+        color: black;
+        font-size: var(--font3);
+    }
+    .line_up{
+        margin-top: 40px;
+        padding-top: 40px ;
+        border-top: solid 1px var(--line-color);
+    }
+    .line_up2{
+        margin-top: 40px;
+        padding-top: 40px ;
+        border-top: solid 1px var(--line-color2);
+    }
+
+    .paragraph_context{
+        display:  flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 0px;
+    }
+    .title3{
+        font-size: var(--font3);
+        font-weight: 500;
+        letter-spacing: 0;
+        letter-spacing: -0.5px;
+    }
+    .paragraph_text{
+        font-weight: 400;
+        font-size: var(--font4);
+    }
+    .title4{
+        font-weight: 500;
+        letter-spacing: -0.5px;
+        font-size: var(--font4);
+    }
+    .paragraph_img{
+        text-align: center;
+        padding: 30px 0px;
+    }
+    .paragraph_img img{
+        border-radius: 5px;
+        box-shadow:  0px 3px 30px var(--shadow_color);
+        /* width: 100%; */
+        max-width: 800px;
+        height: auto;
+    }
+    .paragraph_text a{
+        font-weight: 500;
+        letter-spacing: -1px;
+        color: var(--blue);
+        text-decoration: underline;
+        word-break: break-all;
+    }
+
+    @media(max-width: 1200px){
+        .context{
+            padding: 0px;
+        }
+        .title{
+            margin: 0px;
+        }
+        .paragraph_img img {
+            max-width: 600px;
+        }
+    }
+    @media(max-width: 1000px){
+        .title{
+            font-size: var(--font3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .line_up{
+            margin-top: 5px;
+        }
+        .title3,.link_list li a{
+            font-size: var(--font4);
+        }
+
+        .title2{
+            font-size: var(--font3);
+        }
+        .paragraph_text{
+            font-size: var(--font5);
+        }
+        .paragraph_img img {
+            max-width: 400px;
+        }
+    }
+    @media(max-width: 600px){
+        .paragraph_img img {
+            max-width: 350px;
+        }
+    }
+    @media(max-width: 400px){
+        .paragraph_img img {
+            max-width: 300px;
+        }
+    }
+    @media(max-width: 300px){
+        .paragraph_img img {
+            max-width: 100px;
+        }
+    }
+</style>
+<body>
+    <div class="main">
+        <div class="title">
+            <h1>Informazioni di Utilizzo</h1>
+        </div>
+        <div class="context line_up">
+            <div class="page">
+                <div class="paragraph_context"></div>
+                <div class="title2">Indice</div>
+                <div class="text indice">
+                    <ul class="link_list">
+                        <li><a onclick="page_focus(0)">Gestione dei pagamenti e dei paesi di spedizione</a></li>
+                        <li><a onclick="page_focus(1)">Creazione e modifica dei prodotti</a></li>
+                        <li><a onclick="page_focus(2)">Creazione e modifica dei gruppi di prodotti</a></li>
+                        <li><a onclick="page_focus(3)">Personalizzazione della pagina web</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="page line_up" id="0">
+                <div class="title2">Gestione dei pagamenti e dei paesi di spedizione</div>
+                <div class="text">
+                    <div class="paragraph_context">
+                        <div class="title3">Attivazione pagamenti</div>
+                        <div class="paragraph_text">
+                            Questa piattaforma e-commerce gestisce i pagamenti con le Stripe API,
+                            connettendo il tuo sito web con la piattaforma di pagamenti.
+                            Pertanto, per abilitare i pagamenti, sarà necessario collegare il tuo account Stripe 
+                            con il tuo e-commerce seguendo i seguenti passaggi.
+                        </div>
+                        <div class="title4">- Creazione di un account Stripe</div>
+                        <div class="paragraph_text">
+                            Per la creazione di un account Stripe sarà necessario dirigersi sulla pagina 
+                            <a href="https://dashboard.stripe.com/register">registrazione di Stripe</a>
+                        </div>
+                        <div class="paragraph_img">
+                            <img src="/admin/info/slide_1.png" alt="">
+                        </div>
+                        <div class="paragraph_text">
+                            Una volta completato l'inserimento dei campi richiesti, 
+                            ti verrà inviata un'email per la conferma di questa. <br>
+                            Confermata l'email, verrai reindirizzata/o alla scheda 
+                            (come nel immagine sottostante), nella quale ti verrà
+                            chiesto di attivare i pagamenti.
+                        </div>
+                        <div class="paragraph_img">
+                            <img src="/admin/info/slide_2.png" alt="">
+                        </div>
+                        <div class="paragraph_text">
+                            Cliccando con il mouse sul bottone viola "attiva pagamenti", 
+                            inizierai la configurazione del tuo account.
+                            In questa fase ti verranno richiesti i dati necessari
+                            alla corretta evasione dei tuoi pagamenti, sarà quindi 
+                            fondamentale compilare i campi nella maniera più completa possibile,
+                            ricordandosi (quando verrà chiesto) d'inserire il domino del tuo e-commerce.
+                        </div>
+                        <div class="paragraph_img">
+                            <img src="/admin/info/slide_3.png" alt="">
+                        </div>
+                        <div class="paragraph_text">
+                            A questo punto ti troverai davanti alla schermata iniziale del tuo account Stripe,
+                            dove ti sarà possibile monitorare tutte le tue transazioni. <br>
+                            A destra della schermata troverai i dati necessari al collegamento con il tuo e-commerce.
+                            Cliccando con il mouse sul occhio (indicato dalla freccia rossa nell'immagine sottostante)
+                            ti verrà mostrata la tua chiave privata.
+                            Questa andrà copiata e salvata in un luogo sicuro poiché necessaria al collegamento.
+                        </div>
+                        <div class="paragraph_text">
+                            Questa chiave sarà visibile soltanto una volta nella dashboard di Stripe,
+                            ma sarà possibile generarne una nova in caso ce ne sia il bisogno, 
+                            che andrà a sostituire quella precedente.
+                        </div>
+                        <div class="paragraph_img">
+                            <img src="/admin/info/slide_3.1.png" alt="" style="width: auto;">
+                        </div>
+                        <div class="title4">- Inserimento della chiave privata</div>
+                        <div class="paragraph_text">
+                            Una volta ottenuta la chiave privata ed essendosi assicurati che questa inizi con: "sk_live",
+                            basterà tornare sulla pagina amministratore del tuo e-commerce,
+                            andare nella sezione "payment settings" e una volta inserita la chiave privata nella sezione 
+                            indicata dalla freccia rossa nell'immagine sottostante, 
+                            cliccare il tasto upload e, una volta confermato, la configurazione dei pagamenti sarà completata.
+                        </div>
+                        <div class="paragraph_img">
+                            <img src="/admin/info/slide_4.png" alt="" style="width: auto;">
+                        </div>
+                        <div class="paragraph_text">
+                            Qualora la chiave non dovesse iniziare con: "sk_live" ma con: "sk_test" 
+                            bisognerà, tornando sulla dashboard di Stripe,
+                            assicurasi di non essere nella modalità di test (controllando che lo switch in alto a destra "modalità di test" sia spento).
+                            Copiando quindi la chiave e inserendola nuovamente nel tuo e-commerce (come specificato nel punto precedente).
+                        </div>
+                    </div>
+                    <div class="paragraph_context line_up2">
+                        <div class="title3">Cambio della valuta</div>
+                        <div class="paragraph_text">
+                            Per cambiare la valuta con la quale verranno effettuate le transazioni nel tuo e-commerce,
+                            basterà andare nella sezione "payment settings" della pagina amministratore,
+                            Cliccando dove indicato dalla freccia nell'immagine sottostante e selezionare la valuta d'interesse.
+                        </div>
+                        <div class="paragraph_img">
+                            <img src="/admin/info/slide_5.png" alt="">
+                        </div>
+                    </div>
+                    <div class="paragraph_context line_up2">
+                        <div class="title3">Paesi di spedizione</div>
+                        <div class="paragraph_text">
+                            Per cambiare i paesi dalla quale accetterai gli ordini, 
+                            basterà andare nella sezione "payment settings" 
+                            e selezionare "no" dove indicato dalla freccia nell'immagine sottostante.
+                            Inserire successivamente nella sezione il codice del paese che si vuole 
+                            aggiungere e cliccare il bottone azzurro "aggiungi paese".
+                            Nel capo potranno essere inseriti i codici come: "IT",
+                            oppure i nomi come: "italy".
+                        </div>
+                        <div class="paragraph_img">
+                            <img src="/admin/info/slide_6.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page line_up" id="1">
+                <div class="title2">Creazione e modifica dei prodotti</div>
+                <div class="text">
+                    <div class="paragraph_context">
+                        <div class="title3">Creazione prodotto</div>
+                        <div class="paragraph_text">
+                            Per creare un nuovo prodotto basterà andare nella sezione "product" della pagina
+                            del amministratore e cliccare il pulsante blu "add new product". 
+                            Ti verrà aperta quindi la pagina dedicata alla creazione di un nuovo prodotto.
+                        </div>
+                        
+                        <div class="paragraph_img">
+                            <img src="/admin/info/prodotti_1.png" alt="">
+                        </div>
+                        <div class="title4">I campi da compilare saranno i seguenti:</div>
+                        <div class="title4">Id e il nome prodotto</div>
+                        <div class="paragraph_text">
+                            In questi campi andranno inseriti l'id e il nome del prodotto. <br>
+                            Il codice id è un codice univoco di massimo 40 caratteri per l'identificazione del prodotto. <br>
+                            Il nome invece conterrà un massimo di 50 caratteri.
+
+                        </div>
+                        <div class="paragraph_img">
+                            <img src="/admin/info/prodotti_2_1.png" alt="">
+                        </div>
+                        <div class="title4">Immagini del prodotto</div>
+                        <div class="paragraph_text">
+                            Nella sezione "front image" andrà inserita l'immagine primaria del prodotto. <br>
+                            Mentre nella sezione "images" andranno inserite tutte le altre immagini.
+
+                        </div>
+                        <div class="paragraph_text">
+                            Sarà importante aggiungere immagini non troppo pesanti, per evitare che queste riducano la velocità di caricamento della pagina.
+                            Si consiglia inoltre di non superare un formato di 1000x1000 pixel. 
+                        </div>
+                        <div class="paragraph_img">
+                            <img src="/admin/info/prodotti_2_2.png" alt="">
+                        </div>
+
+                        <div class="title4">Prezzo e quantità</div>
+                        <div class="paragraph_text">
+                            In questo campo andranno inseriti il prezzo e la quantità del prodotto. <br>
+                            Nel caso in cui nel prodotto vengano aggiunte delle opzioni (come taglia, colore,...),
+                            i prezzi e le quantità saranno stabiliti successivamente per ogni opzione. <br>
+                            Pertanto, il campo "price" di questa sezione, conterrà soltanto il "prezzo in evidenza",
+                            mostrato al cliente come nella seconda immagine qui sotto.
+                        </div>
+                        <div class="paragraph_img">
+                            <img src="/admin/info/prodotti_2_3.png" alt="">
+                        </div>
+                        <div class="paragraph_img">
+                            <img src="/admin/info/prodotti_2_4.png" alt="" style="width: auto;">
+                        </div>
+                        <div class="title4">opzioni del prodotto</div>
+                        <div class="paragraph_text">
+                            Tra i vari campi da compilare sarà presente anche quella delle opzioni, 
+                            come il colore o la taglia.
+                            Cliccando con il mouse nella sezione options,
+                            ti verrà chiesto il nome dell'opzione e i rispettivi valori
+                            che questa conterrà. 
+                            Questi ultimi andranno inseriti di fila (nel campo indicato dalla freccia rossa), separati da una virgola
+                            come: "rosso, verde, blu".
+                        </div>
+                        <div class="paragraph_text">
+                            Ogni prodotto potrà contenere un massimo di tre opzioni con un illimitato numero di valori per ognuna.
+                        </div>
+
+                        <div class="paragraph_img">
+                            <img src="/admin/info/prodotti_2.png" alt="">
+                        </div>
+
+                        <div class="paragraph_text">
+                            Una volta inserita anche la descrizione del prodotto, basterà confermare cliccando il pulsante blu in fondo alla pagina.
+                        </div>
+                    </div>
+                    <div class="paragraph_context line_up2">
+                        <div class="title3">Modifica prodotto</div>
+                        <div class="paragraph_text">
+                            Nella sezione "product" della pagina dell'amministratore, è possibile 
+                            modificare il prodotto. <br>
+                            Cliccando sul pulsante "edit" nella stessa riga del prodotto d'interesse,
+                            verrà aperta la pagina dedicata alla modifica. <br>
+                            Questa, ti darà la possibilità di modificare tutti i campi interessati e se necessario anche 
+                            alla rimozione del prodotto. 
+                        </div>                        
+
+                        <div class="paragraph_img">
+                            <img src="/admin/info/prodotti_4.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page line_up" id="2">
+                <div class="title2">Creazione e modifica dei gruppi di prodotti</div>
+                <div class="text">
+                    <div class="paragraph_context">
+                        <div class="title3">Creazione gruppo di prodotti</div>
+                        <div class="paragraph_text">
+                            Per creare un nuovo prodotto basterà andare nella sezione "Group" della pagina
+                            del amministratore e cliccare il pulsante blu "create group ".
+                        </div>
+
+                        <div class="paragraph_img">
+                            <img src="/admin/info/prodotti_5.png" alt="">
+                        </div>
+                        <div class="paragraph_text">
+                            Selezionando "main" come nella prima immagine sottostante, si specificherà 
+                            che il gruppo sarà un gruppo principale.
+                            I gruppi principali verranno mostrati nel menu del tuo sito
+                            come mostrato nella seconda
+                            immagine sottostante.
+                        </div>
+                        <div class="paragraph_img">
+                            <img src="/admin/info/prodotti_6.png" alt="">
+                        </div>
+                        <div class="paragraph_img">
+                            <img src="/admin/info/prodotti_7.png" alt="">
+                        </div>
+                        <div class="paragraph_text"></div>
+                        <div class="paragraph_text">
+                            Cliccando con il mouse su "add product", ti verrà chiesto di selezionare i prodotti da aggiungere nel gruppo.
+                        </div>
+                        <div class="paragraph_img">
+                            <img src="/admin/info/prodotti_8.png" alt="">
+                        </div>
+                        <div class="paragraph_text">
+                            Una volta selezionati i prodotti basterà confermare (cliccando su "add group"). 
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="paragraph_context line_up2">
+                        <div class="title3">Modifica gruppo di prodotti</div>
+                        <div class="paragraph_text">
+                            Nella sezione "Group" della pagina dell'amministratore, è possibile modificare il gruppo.
+                            Cliccando sul pulsante "edit" nella stessa riga del gruppo d'interesse, verrà aperta la pagina dedicata alla modifica.
+                            Questa, ti darà la possibilità di modificare tutti i campi interessati e se necessario anche alla rimozione del gruppo.
+                        </div>
+
+                        <div class="paragraph_img">
+                            <img src="/admin/info/prodotti_9.png" alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="page line_up" id="3">
+                <div class="title2">Personalizzazione della pagina web</div>
+                <div class="text">
+                    <div class="paragraph_context">
+
+                        <div class="paragraph_text">
+                            Andando nella sezione "web page" della pagina
+                            del amministratore, 
+                            verrà aperta una nuova scheda dedicata alla personalizzazione della pagina web. <br>
+                        </div>
+
+                        <div class="paragraph_img">
+                            <img src="/admin/info/group_1.png" alt="">
+                        </div>
+
+                        <div class="paragraph_text">
+                            Qui potrai personalizzare le tre pagine principali del tuo e-commerce:
+                        </div>
+                        <div class="title4">
+                            la pagina "home":
+                        </div>
+                        <div class="paragraph_img">
+                            <img src="/admin/info/group_2.png" alt="">
+                        </div>
+                        <div class="title4">
+                            la pagina "group":
+                        </div>
+                        <div class="paragraph_img">
+                            <img src="/admin/info/group_3.png" alt="">
+                        </div>
+                        <div class="title4">
+                            e infine la pagina del prodotto:
+                        </div>
+                        <div class="paragraph_img">
+                            <img src="/admin/info/group_4.png" alt="">
+                        </div>
+
+                        <div class="paragraph_text">
+                            Cliccando con il mouse sulla sezione della pagina che si vuole personalizzare,
+                            ti verranno mostrati gli strumenti di modifica
+                            (nella parte sinistra della pagina di personalizzazione).
+                        </div>
+                        
+                        <div class="title4">
+                            Gli strumenti di modifica sono:
+                        </div>
+                        <div class="paragraph_text"></div>
+                        <div class="title4">
+                            il titolo:
+                        </div>
+                        <div class="paragraph_text"> 
+                            Utilizzato per inserire un breve testo all'interno della sezione, 
+                            come un titolo o uno slogan. <br>
+                            Qui potranno essere modificati i testi e il colore di questi.
+                        </div>
+                        <div class="paragraph_img">
+                            <img src="/admin/info/group_5.png" alt="">
+                        </div>
+                        <div class="title4">
+                            il "contenitore":
+                        </div>
+                        <div class="paragraph_text"> 
+                            Nel quale sarà possibile, arrotondare gli angoli (nella sezione "border radius") e modificare lo sfondo (nella sezione "background"). <br> 
+                            Nella sezione "background" inoltre, sarà possibile scegliere tra un colore o un'immagine.
+                        </div>
+                        <div class="paragraph_img">
+                            <img src="/admin/info/group_6.png" alt="">
+                        </div>
+                        <div class="title4">
+                            il testo:
+                        </div>
+                        <div class="paragraph_text"> 
+                            Utilizzato per inserire un testo all'interno della sezione, 
+                            come una descrizione.
+                        </div>
+                        <div class="paragraph_img">
+                            <img src="/admin/info/group_7.png" alt="">
+                        </div>
+                        <div class="title4">
+                            il bottone singolo:
+                        </div>
+                        <div class="paragraph_text"> 
+                            Nel "bottone singolo" si potrà modificare il testo, il colore e il raggio degli angoli come negli strumenti precedenti. <br>
+                            Si potrà inoltre collegare, nell'ultima sezione "button link", a un prodotto o ad un gruppo di prodotti. <br>
+                            Questo premetterà al cliente di essere reindirizzato sul prodotto o gruppo selezionato.
+                        </div>
+                        <div class="paragraph_img">
+                            <img src="/admin/info/group_8.png" alt="">
+                        </div>
+
+                        <div class="title4">
+                            il bottone multiplo:
+                        </div>
+                        <div class="paragraph_text"> 
+                            Il "bottone multiplo" ha le stesse personalizzazioni del bottone singolo.
+                            Questo, a differenza del primo, potrà essere collegato unicamente a un gruppo di prodotti,
+                            in quanto utilizzato per mostrare al cliente molteplici prodotti (come nella seconda immagine)
+                        </div>
+                        <div class="paragraph_img">
+                            <img src="/admin/info/group_9.png" alt="">
+                        </div>
+                        <div class="paragraph_img">
+                            <img src="/admin/info/group_9_1.png" alt="">
+                        </div>
+                        <div class="paragraph_text"> 
+                            Una volta personalizzata la prima pagina,
+                            è possibile passare alla seconda utilizzando le frecce di navigazione (come nell'immagine sottostante). <br>
+                            Queste sono situate in fondo alla pagina di personalizzazione.                             
+                        </div>
+                        <div class="paragraph_img">
+                            <img src="/admin/info/admin/info/group_10.png" alt="">
+                        </div>
+                        <div class="paragraph_text"> 
+                            Completata la personalizzazione, basterà confermare cliccando con li mouse su "conferma", per salvare le modifiche.                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+<script>
+    function page_focus(id){
+        const x = document.getElementById(id);
+        x.scrollIntoView();
+    }
+
+    window.onload = ()=>{
+
+        const urlParams = new URL(window.location.href).searchParams;
+        const id = urlParams.get('position');
+
+        if(id != null){
+            page_focus(id)
+        }
+    }
+</script>
+</html>

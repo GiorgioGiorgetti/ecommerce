@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/admin/template.css">
+    <link rel="stylesheet" href="/admin/template/statics/monolith.min.css"/>
+    <link rel="stylesheet" href="/admin/template/statics/option.css"/>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="body">
+        
+        <div class="option_container" id="option_cnt">
+            <div class="option_container_btn">
+                <button id="remove_option_div"><img src="/icon/plus.png" alt=""></button>
+            </div>
+            <div class="option" id="option">
+                <div class="hide-option" id="hide_option">
+                    <div class="color-picker"></div>
+                </div>
+            </div>
+            <div style="height: 20px;"></div>
+        </div>
+
+        <!-- web page -->
+        <section id="web_page_pg" class="box web_page_pg">
+                        
+
+            <section class="web_page_pg_template_pg">
+                <object type="text/html"id="page" class="page-area-object" data="/admin/template/statics/empty_template.html">
+                </object>
+            </section>
+
+            <div class="web_page_footer">
+            <img src="/icon/freccia.svg" alt="" id="back">
+            <a id="web_page_download"> conferma </a>
+            <img src="/icon/freccia.svg" alt="" id="forward">
+            </div>
+            
+        </section>
+
+        <!-- web page template -->
+        <section id="web_page_template" class="box"></section>
+    </div>
+</body>
+<script src="/admin/template/scripts/pickr.min.js"></script>
+<script src="/admin/template/scripts/template.js"></script>
+<script src="/admin/template.js"></script>
+</html>

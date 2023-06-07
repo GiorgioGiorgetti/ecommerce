@@ -1,0 +1,37 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500&display=swap');
+
+:root {
+	--font: 'Outfit', sans-serif;
+}
+
+p {
+	margin: 0px;
+}
+
+::-webkit-scrollbar {
+	height: 7px;
+	width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgb(109, 109, 109);
+	border-radius: 5px;
+}
+
+html,body {
+	margin: 0px;
+	padding: 0px;
+	font-family: var(--font);
+	background-color: white !important;
+}
+
+a,button {
+	cursor: pointer;
+}
+a{
+	text-decoration: none;
+}
+.hide{
+	display: none;
+}

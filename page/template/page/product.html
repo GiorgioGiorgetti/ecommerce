@@ -1,0 +1,261 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product</title>
+</head>
+<body>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500&display=swap');
+
+:root {
+	--font: 'Outfit', sans-serif;
+}
+
+p {
+	margin: 0px;
+}
+
+::-webkit-scrollbar {
+	height: 7px;
+	width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgb(109, 109, 109);
+	border-radius: 5px;
+}
+
+html,body {
+	margin: 0px;
+	padding: 0px;
+	font-family: var(--font);
+	background-color: white !important;
+}
+
+a,button {
+	cursor: pointer;
+}
+a{
+	text-decoration: none;
+}
+.hide{
+	display: none;
+}
+</style><div><section id="work_section" class="work-section"><div tmpval_eng="prod_pg_sec">
+	<style>
+
+		.sing-prod-cnt_section{
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			padding: 50px;
+		}
+		.sing-prod-cnt_section-img_cnt{
+			display: grid;
+			grid-template-columns: 120px 1fr;
+			gap: 15px;
+		}
+		.sing-prod-cnt_section-img_cnt-side-section_cnt{
+			height: 100px;
+			width: 100px;
+			text-align: center;
+		}
+		.sing-prod-cnt_section-img_cnt-side-section_cnt img, .sing-prod-cnt_section-img_cnt-main img{
+			max-width: 100%;
+			max-height: 100%;
+			transition: 250ms;
+		}
+
+		.sing-prod-cnt_section-img_cnt-side-section_cnt img:hover{
+			transform: scale(1.05);
+		}
+		.sing-prod-cnt_section-img_cnt-side{
+			overflow: auto;
+		}
+		.sing-prod-cnt_section-img_cnt-side, .sing-prod-cnt_section-img_cnt-main{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 10px;
+			max-height: 600px;
+		}
+
+		.sing-prod-cnt_section-text{
+			padding-left: 30px;
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr 1fr 1fr;
+		}
+		.sing-prod-cnt_section-text-h2{
+			margin: 0px;
+			font-size: 50px;
+			font-weight: 500;
+		}
+		.sing-prod-cnt_section-text-price{
+			font-size: 46px;
+			font-weight: 300;
+			letter-spacing: 0.5;
+		}
+
+
+		.sing-prod-cnt_section-cnt_text_option_list{
+			display: flex;
+			flex-direction: column;
+			margin-left: 40px;
+			justify-content: center;
+			gap: 15px;
+		}
+		.sing-prod-cnt_section-text_option_list{
+			display: flex;
+			align-items: center;
+			gap: 10px;
+		}
+		.sing-prod-cnt_section-text_option_list p{
+			font-size: 28px;
+		}
+		.sing-prod-cnt_section-text_option_list select{
+			padding: 2px 5px;
+			min-width: 70px;
+			font-size: 26px;
+			border: none;
+		}
+
+		.sing-prod-cnt_section-cnt_buy_btn_list{
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			gap: 10px;
+		}
+
+		.sing-prod-cnt_section-cnt_buy_btn_list a{
+			height: 60px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: solid 1px;
+			width: 80%;
+			font-weight: 300;
+			transition: 250ms;
+			font-size: 25px;
+		}
+		.sing-prod-cnt_section-cnt_buy_btn_list_a2:hover{
+			transform: scale(0.95);
+		}
+		.sing-prod-cnt_section-cnt_buy_btn_list_a1{
+			color: white;
+			background-color: black;
+		}
+		.sing-prod-cnt_section-cnt_buy_btn_list_a1:hover{
+			transform: scale(0.95);
+		}
+
+		.sing-prod-cnt_section-txt-cnt{
+			padding: 50px;
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+		}
+		.sing-prod-cnt_section-txt-cnt h2{
+			margin: 0px;
+			font-size: 50px;
+			font-weight: 500;
+		}
+
+		@media (max-width: 1000px){
+			.sing-prod-cnt_section{
+				padding: 30px;
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+			}
+			.sing-prod-cnt_section-text{
+				padding-left: 0px;
+				display: flex;
+				flex-direction: column;
+				gap: 50px;
+			}
+			.sing-prod-cnt_section-text-title{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+			.sing-prod-cnt_section-img_cnt{
+				display: flex;
+				flex-direction: column-reverse;
+			}
+			.sing-prod-cnt_section-img_cnt-side{
+				display: -webkit-inline-box;
+				gap: 10px;
+				height: 120px;
+			}
+			.sing-prod-cnt_section-img_cnt-main{
+				max-height: none;
+			}
+			.sing-prod-cnt_section-cnt_text_option_list{
+				align-items: center;
+			}
+			.sing-prod-cnt_section-cnt_buy_btn_list{
+				margin-top: 20px;
+			}
+			.sing-prod-cnt_section-cnt_buy_btn_list a{
+				margin: 0 auto;
+			}
+
+		}
+
+		@media (max-width: 1000px){
+			.sing-prod-cnt_section-text-h2{
+				font-size: 35px;
+			}
+			.sing-prod-cnt_section-text-price {
+				font-size: 35px;
+			}
+		}
+	</style>
+	<div class="sing-prod-cnt_section">
+
+		<div class="sing-prod-cnt_section-img_cnt">
+
+			<div class="sing-prod-cnt_section-img_cnt-side" id="prd_img_parent"><div class="sing-prod-cnt_section-img_cnt-side-section_cnt" id="prd_img_tmp">
+					<img src="/page/media/0.png" alt="">
+				</div></div>
+
+			<div class="sing-prod-cnt_section-img_cnt-main">
+				<img id="prd_main_img" src="/page/media/0.png">
+			</div>
+		</div>
+
+		<div class="sing-prod-cnt_section-text">
+
+			<div class="sing-prod-cnt_section-text-title">
+				<h2 class="sing-prod-cnt_section-text-h2" id="prd_title">Prodotto</h2>
+				<p class="sing-prod-cnt_section-text-price" id="prd_price">19.99€</p>
+			</div>
+
+			<div class="sing-prod-cnt_section-cnt_text_option_list" id="prd_select_div_cnt">
+
+				<div class="sing-prod-cnt_section-text_option_list" id="prd_select_div">
+					<p></p>
+					<select></select>
+				</div>
+
+			</div>
+
+			<div class="sing-prod-cnt_section-cnt_buy_btn_list">
+				<div>
+					<a class="sing-prod-cnt_section-cnt_buy_btn_list_a1" id="prd_bnow_btn" tmpval="button_ng_bk" style="border-color: rgb(0, 0, 0); background-color: rgb(0, 0, 0);"><p>compra subito</p></a>
+				</div>
+				<div>
+					<a class="sing-prod-cnt_section-cnt_buy_btn_list_a2" id="prd_cart_btn" tmpval="button_ng" style="border-color: rgb(0, 0, 0);"><p style="color: rgb(0, 0, 0);">aggiungi al carrello</p></a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="sing-prod-cnt_section-txt-cnt">
+		<h2>Descrizione</h2>
+		<p id="prd_description"></p>
+	</div>
+</div>
+  </section></div></body><script src="/engine.js"></script>

@@ -1,0 +1,66 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>products</title>
+</head>
+<body>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500&display=swap');
+
+:root {
+	--font: 'Outfit', sans-serif;
+}
+
+p {
+	margin: 0px;
+}
+
+::-webkit-scrollbar {
+	height: 7px;
+	width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgb(109, 109, 109);
+	border-radius: 5px;
+}
+
+html,body {
+	margin: 0px;
+	padding: 0px;
+	font-family: var(--font);
+	background-color: white !important;
+}
+
+a,button {
+	cursor: pointer;
+}
+a{
+	text-decoration: none;
+}
+.hide{
+	display: none;
+}
+</style><div><section id="work_section" class="work-section"><div>
+	
+  </div></section><section id="work_section" class="work-section">
+	  <style>
+		.product-list-tmp{ 		display: grid; 		gap: 40px 30px; 		grid-template-columns: repeat(2,1fr); 		grid-template-rows: auto; 		max-width: 100%; 		margin: 80px 30px; 	} 	.product-list-tmp img{ 		max-width: 100%; 		transition: 200ms; 	} 	.product-list-tmp img:hover{ 		transform: scale(1.02); 	} 	.product-list-tmp section{ 		display: flex; 		flex-direction: column; 		align-items: center; 	} 	.product-template-cnt{ 		display: flex; 		flex-direction: column; 		align-items: center; 	} 	.product-list-tmp-text{ 		min-height: 50px; 		width: 90%; 		display: flex; 		align-items: center; 		justify-content: space-between; 	} 	.product-list-tmp-text h2{ 		margin: 0px; 		font-size: 18px; 		font-weight: 500; 		letter-spacing: 0.5; 	} 	.product-list-tmp-text p{ 		font-size: 16px; 		letter-spacing: 0.5; 	} 	.product-list-tmp-cart{ 		display: flex; 		flex-direction: column; 		align-items: center; 		width: 100%; 	} 	.product-list-tmp-cart a{ 		height: 40px; 		display: flex; 		align-items: center; 		justify-content: center; 		border: solid 1px; 		width: 100%; 		font-weight: 300; 		transition: 250ms; 	} 	.product-list-tmp-cart a:hover{ transform: scale(0.95);	} 	@media screen and (min-width: 900px){ 		.product-list-tmp{ 			grid-template-columns: repeat(4,1fr); 		} 	}
+	  </style>
+	  <div class="product-list-tmp " tmpval_eng="prod-group">
+		
+	  <section tmpval_eng="prod-group-template">
+		  <div class="product-template-cnt " tmpval_eng="prod-group-template-link">
+			<div><img alt="" src="/page/media/0.png"></div>
+			<div class="product-list-tmp-text">
+			  <h2 tmpval_eng="prod-group-template-title">Prodotto</h2>
+			  <p tmpval_eng="prod-group-template-price">70€</p>
+			</div>
+		  </div>
+		  <div class="product-list-tmp-cart">
+			<a tmpval_eng="prod-group-template-cart" tmpval="button_ng_rp"><p>scopri di più</p></a>
+		  </div>
+		</section></div>
+	</section></div></body><script src="/engine.js"></script>

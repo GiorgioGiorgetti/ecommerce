@@ -1,0 +1,765 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+</head>
+<body>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500&display=swap');
+
+:root {
+	--font: 'Outfit', sans-serif;
+}
+
+p {
+	margin: 0px;
+}
+
+::-webkit-scrollbar {
+	height: 7px;
+	width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgb(109, 109, 109);
+	border-radius: 5px;
+}
+
+html,body {
+	margin: 0px;
+	padding: 0px;
+	font-family: var(--font);
+	background-color: white !important;
+}
+
+a,button {
+	cursor: pointer;
+}
+a{
+	text-decoration: none;
+}
+.hide{
+	display: none;
+}
+</style><div><section id="work_section" class="work-section">
+		<style>
+			.body-template-1 {
+				font-family: var(--font);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+				height: 600px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				padding: 0px 4%;
+				align-items: center;
+				gap: 50px;
+			}
+
+			.body-template-1-secondary-text {
+				color: white;
+				font-size: 24px;
+				text-align: center;
+			}
+
+			.body-template-1-left-div{
+				align-items: center;
+				display: flex;
+				flex-direction: column;
+			}
+			.body-template-1-Primary-text {
+				color: white;
+				font-size: 60px;
+				font-weight: 500;
+				padding: 2px 20px;
+				text-align: center;
+				
+			}
+
+			.body-template-1-right-div p {
+				color: white;
+			}
+
+			.body-template-1-right-div a {
+				display: flex;
+				padding: 7px 15px;
+				border: solid 2px white;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 18px;
+			}
+
+			.body-template-1-right-div a:hover {
+				opacity: 0.7;
+			}
+
+			@media (max-width: 500px) {
+				/* .body-template-1 {
+					height: 300px;
+				} */
+				.body-template-1-Primary-text {
+					font-size: 40px;
+				}
+				.body-template-1-secondary-text{
+					font-size: 18px;
+				}
+
+				.body-template-1-left-div {
+					margin-top: 40px;
+				}
+
+				.body-template-1-right-div {
+					margin-bottom: 40px;
+					text-align: center;
+				}
+			}
+
+			@media (min-width: 1700px) {
+				.body-template-1 {
+					height: 600px;
+				}
+			}
+		</style>
+		<div class="body-template-1" id="body-template-1" tmpval="editable-div" style="background-image: url('/img/blank_img.jpg');">
+			<div class="body-template-1-left-div">
+			<p class="body-template-1-Primary-text" tmpval="title" style="color: rgb(97, 97, 97);">Testo primario</p>
+			<p class="body-template-1-secondary-text" tmpval="title" style="color: rgb(76, 221, 139);">Testo secondario</p>
+			</div>
+			<div class="body-template-1-right-div">
+			<a tmpval="button"><p>Bottone</p></a>
+			</div>
+		</div>
+	</section><section id="work_section" class="work-section">
+		<style>
+			.product-list-tmp {
+				display: grid;
+				gap: 40px 30px;
+				grid-template-columns: repeat(2,1fr);
+				grid-template-rows: auto;
+				max-width: 100%;
+				margin: 80px 30px;
+			}
+
+			.product-list-tmp img {
+				max-width: 100%;
+				transition: 200ms;
+			}
+
+			.product-list-tmp img:hover {
+				transform: scale(1.02);
+			}
+
+			.product-list-tmp section {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.product-template-cnt {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.product-list-tmp-text {
+				min-height: 50px;
+				width: 90%;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+
+			.product-list-tmp-text h2 {
+				margin: 0px;
+				font-size: 18px;
+				font-weight: 500;
+				letter-spacing: 0.5;
+			}
+
+			.product-list-tmp-text p {
+				font-size: 16px;
+				letter-spacing: 0.5;
+			}
+
+			.product-list-tmp-cart {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 100%;
+			}
+
+			.product-list-tmp-cart a {
+				height: 40px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border: solid 1px;
+				width: 100%;
+				font-weight: 300;
+				transition: 250ms;
+			}
+
+			.product-list-tmp-cart a:hover {
+				transform: scale(0.95);
+			}
+
+			@media screen and (min-width: 900px) {
+				.product-list-tmp {
+					grid-template-columns: repeat(4,1fr);
+				}
+			}
+			@media screen and (max-width: 400px) {
+				.product-list-tmp {
+					grid-template-columns: repeat(1,1fr);
+				}
+			}
+		</style>
+		<div class="product-list-tmp" group="98" tmpval="prod" tmpval_eng="prod">
+			
+			
+
+		<section tmpval_eng="prod-template">
+				<div class="product-template-cnt " tmpval_eng="prod-template-link">
+				<div><img src="/page/media/0.png"></div>
+				<div class="product-list-tmp-text">
+					<h2 tmpval_eng="prod-template-title">Prodotto</h2>
+					<p tmpval_eng="prod-template-price">70€</p>
+				</div>
+				</div>
+				<div class="product-list-tmp-cart">
+				<a tmpval_eng="prod-template-cart" tmpval="button_ng_rp" style="border-radius: 0px; border-color: rgb(0, 0, 0);"><p style="color: rgb(0, 0, 0);">scopri di più</p></a>
+				</div>
+			</section></div>
+	</section><section id="work_section" class="work-section">
+
+		<style>
+			.body-template-3 {
+				min-height: 600px;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+			}
+
+			.body-template-3-left{
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+			}
+			.body-template-3-right{
+				padding: 20px 50px;
+				padding-bottom: 0px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 20px;
+			}
+			.body-template-3-div-title{
+				font-size: 60px;
+				font-weight: 500;
+			}
+			.body-template-3-div-description{
+				font-size: 24px;
+				font-weight: 300;
+			}
+			.body-template-3-right_div{
+				display: flex;
+			}
+			.body-template-3-div-button{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 18px;
+				padding: 7px 15px;
+				border: solid 2px;
+				
+			}
+
+			.body-template-3-div-button img {
+				padding-top: 1px;
+			}
+
+			@media (max-width: 800px) {
+				.body-template-3{
+					grid-template-columns: 1fr;
+				}
+				.body-template-3-left{
+					min-height: 300px;
+				}
+				.body-template-3-div-description{
+					width: 100%;
+				}
+				.body-template-3-right div{
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+				}
+				.body-template-3-div-description{
+					text-align: center;
+					font-size: 18px;
+				}
+				.body-template-3-div-title{
+					font-size: 40px;
+				}
+
+			}
+		</style>
+		<div class="body-template-3" id="body-template-3">
+			<div class="body-template-3-left" tmpval="editable-div" style="background-image: url('/img/blank_img.jpg');"></div>
+			<div class="body-template-3-right" tmpval="editable-div">
+				<div>
+					<p class="body-template-3-div-title" tmpval="title">Titolo</p>
+					<p class="body-template-3-div-description" tmpval="text">Descrizione ...</p>
+				</div>
+				<div class="body-template-3-right_div">
+					<a class="body-template-3-div-button " tmpval="button" style="border-color: rgb(0, 0, 0);"><p style="color: rgb(0, 0, 0);">Bottone</p></a>
+				</div>
+			</div>
+		</div>
+		
+	</section><section id="work_section" class="work-section">
+		<style>
+			.product-list-tmp {
+				display: grid;
+				gap: 40px 30px;
+				grid-template-columns: repeat(2,1fr);
+				grid-template-rows: auto;
+				max-width: 100%;
+				margin: 80px 30px;
+			}
+
+			.product-list-tmp img {
+				max-width: 100%;
+				transition: 200ms;
+			}
+
+			.product-list-tmp img:hover {
+				transform: scale(1.02);
+			}
+
+			.product-list-tmp section {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.product-template-cnt {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.product-list-tmp-text {
+				min-height: 50px;
+				width: 90%;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+
+			.product-list-tmp-text h2 {
+				margin: 0px;
+				font-size: 18px;
+				font-weight: 500;
+				letter-spacing: 0.5;
+			}
+
+			.product-list-tmp-text p {
+				font-size: 16px;
+				letter-spacing: 0.5;
+			}
+
+			.product-list-tmp-cart {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 100%;
+			}
+
+			.product-list-tmp-cart a {
+				height: 40px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border: solid 1px;
+				width: 100%;
+				font-weight: 300;
+				transition: 250ms;
+			}
+
+			.product-list-tmp-cart a:hover {
+				transform: scale(0.95);
+			}
+
+			@media screen and (min-width: 900px) {
+				.product-list-tmp {
+					grid-template-columns: repeat(4,1fr);
+				}
+			}
+			@media screen and (max-width: 400px) {
+				.product-list-tmp {
+					grid-template-columns: repeat(1,1fr);
+				}
+			}
+		</style>
+		<div class="product-list-tmp" group="98" tmpval="prod" tmpval_eng="prod">
+			
+			
+
+		<section tmpval_eng="prod-template">
+				<div class="product-template-cnt " tmpval_eng="prod-template-link">
+				<div><img src="/page/media/0.png"></div>
+				<div class="product-list-tmp-text">
+					<h2 tmpval_eng="prod-template-title">Prodotto</h2>
+					<p tmpval_eng="prod-template-price">70€</p>
+				</div>
+				</div>
+				<div class="product-list-tmp-cart">
+				<a tmpval_eng="prod-template-cart" tmpval="button_ng_rp" style="border-radius: 0px;"><p>scopri di più</p></a>
+				</div>
+			</section></div>
+	</section><section id="work_section" class="work-section">
+
+		<style>
+			.body-template-4 {
+				min-height: 600px;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+			}
+
+			.body-template-4-left{
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+			}
+			.body-template-4-right{
+				padding: 20px 50px;
+				padding-bottom: 0px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 20px;
+			}
+			.body-template-4-div-title{
+				font-size: 60px;
+				font-weight: 500;
+			}
+			.body-template-4-div-description{
+				font-size: 24px;
+				font-weight: 300;
+			}
+			.body-template-4-right_div{
+				display: flex;
+			}
+			.body-template-4-div-button{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 18px;
+				padding: 7px 15px;
+				border: solid 2px;
+				
+			}
+
+			.body-template-4-div-button img {
+				padding-top: 1px;
+			}
+
+			@media (max-width: 800px) {
+				.body-template-4{
+					grid-template-columns: 1fr;
+				}
+				.body-template-4-left{
+					min-height: 300px;
+				}
+				.body-template-4-div-description{
+					width: 100%;
+				}
+				.body-template-4-right div{
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+				}
+				.body-template-4-div-description{
+					text-align: center;
+					font-size: 18px;
+				}
+				.body-template-4-div-title{
+					font-size: 40px;
+				}
+
+			}
+		</style>
+		<div class="body-template-4" id="body-template-4">
+			<div class="body-template-4-right" tmpval="editable-div">
+				<div>
+					<p class="body-template-4-div-title" tmpval="title">Titolo</p>
+					<p class="body-template-4-div-description" tmpval="text">Descrizione ...</p>
+				</div>
+				<div class="body-template-4-right_div">
+					<a class="body-template-4-div-button " tmpval="button" style="border-color: rgb(0, 0, 0);"><p style="color: rgb(0, 0, 0);">Bottone</p></a>
+				</div>
+			</div>
+			<div class="body-template-4-left" tmpval="editable-div" style="background-image: url('/img/blank_img.jpg');"></div>
+		</div>
+		
+	</section><section id="work_section" class="work-section">
+		<style>
+			.product-list-tmp {
+				display: grid;
+				gap: 40px 30px;
+				grid-template-columns: repeat(2,1fr);
+				grid-template-rows: auto;
+				max-width: 100%;
+				margin: 80px 30px;
+			}
+
+			.product-list-tmp img {
+				max-width: 100%;
+				transition: 200ms;
+			}
+
+			.product-list-tmp img:hover {
+				transform: scale(1.02);
+			}
+
+			.product-list-tmp section {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.product-template-cnt {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.product-list-tmp-text {
+				min-height: 50px;
+				width: 90%;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+
+			.product-list-tmp-text h2 {
+				margin: 0px;
+				font-size: 18px;
+				font-weight: 500;
+				letter-spacing: 0.5;
+			}
+
+			.product-list-tmp-text p {
+				font-size: 16px;
+				letter-spacing: 0.5;
+			}
+
+			.product-list-tmp-cart {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 100%;
+			}
+
+			.product-list-tmp-cart a {
+				height: 40px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border: solid 1px;
+				width: 100%;
+				font-weight: 300;
+				transition: 250ms;
+			}
+
+			.product-list-tmp-cart a:hover {
+				transform: scale(0.95);
+			}
+
+			@media screen and (min-width: 900px) {
+				.product-list-tmp {
+					grid-template-columns: repeat(4,1fr);
+				}
+			}
+			@media screen and (max-width: 400px) {
+				.product-list-tmp {
+					grid-template-columns: repeat(1,1fr);
+				}
+			}
+		</style>
+		<div class="product-list-tmp" group="98" tmpval_eng="prod" tmpval="prod">
+			
+			
+
+		<section tmpval_eng="prod-template">
+				<div class="product-template-cnt " tmpval_eng="prod-template-link">
+				<div><img src="/page/media/0.png"></div>
+				<div class="product-list-tmp-text">
+					<h2 tmpval_eng="prod-template-title">Prodotto</h2>
+					<p tmpval_eng="prod-template-price">70€</p>
+				</div>
+				</div>
+				<div class="product-list-tmp-cart">
+				<a tmpval_eng="prod-template-cart" tmpval="button_ng_rp" style="border-color: rgb(0, 0, 0); border-radius: 0px;"><p style="color: rgb(0, 0, 0);">scopri di più</p></a>
+				</div>
+			</section></div>
+	</section><section id="work_section" class="work-section">
+		<style>
+			.body-template-6 {
+				font-family: var(--font);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+				height: 400px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				padding: 0px 4%;
+				align-items: center;
+				gap: 50px;
+			}
+
+
+
+			.body-template-6-left-div{
+				align-items: center;
+				display: flex;
+				flex-direction: column;
+			}
+			.body-template-6-Primary-text {
+				color: white;
+				font-size: 60px;
+				font-weight: 500;
+				padding: 2px 20px;
+				text-align: center;
+				
+			}
+
+			@media (max-width: 500px) {
+				/* .body-template-6 {
+					height: 300px;
+				} */
+				.body-template-6-Primary-text {
+					font-size: 40px;
+				}
+
+				.body-template-6-left-div {
+					margin-top: 40px;
+				}
+
+			}
+
+		</style>
+		<div class="body-template-6" id="body-template-6" tmpval="editable-div" style="background-image: url('/img/blank_img.jpg');">
+			<div class="body-template-6-left-div">
+			<p class="body-template-6-Primary-text" tmpval="title">Testo primario</p>
+			</div>
+
+		</div>
+	</section><section id="work_section" class="work-section">
+		<style>
+			.product-list-tmp {
+				display: grid;
+				gap: 40px 30px;
+				grid-template-columns: repeat(2,1fr);
+				grid-template-rows: auto;
+				max-width: 100%;
+				margin: 80px 30px;
+			}
+
+			.product-list-tmp img {
+				max-width: 100%;
+				transition: 200ms;
+			}
+
+			.product-list-tmp img:hover {
+				transform: scale(1.02);
+			}
+
+			.product-list-tmp section {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.product-template-cnt {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.product-list-tmp-text {
+				min-height: 50px;
+				width: 90%;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+
+			.product-list-tmp-text h2 {
+				margin: 0px;
+				font-size: 18px;
+				font-weight: 500;
+				letter-spacing: 0.5;
+			}
+
+			.product-list-tmp-text p {
+				font-size: 16px;
+				letter-spacing: 0.5;
+			}
+
+			.product-list-tmp-cart {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 100%;
+			}
+
+			.product-list-tmp-cart a {
+				height: 40px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border: solid 1px;
+				width: 100%;
+				font-weight: 300;
+				transition: 250ms;
+			}
+
+			.product-list-tmp-cart a:hover {
+				transform: scale(0.95);
+			}
+
+			@media screen and (min-width: 900px) {
+				.product-list-tmp {
+					grid-template-columns: repeat(4,1fr);
+				}
+			}
+			@media screen and (max-width: 400px) {
+				.product-list-tmp {
+					grid-template-columns: repeat(1,1fr);
+				}
+			}
+		</style>
+		<div class="product-list-tmp" group="98" tmpval="prod" tmpval_eng="prod">
+			
+			
+
+		<section tmpval_eng="prod-template">
+				<div class="product-template-cnt " tmpval_eng="prod-template-link">
+				<div><img src="/page/media/0.png"></div>
+				<div class="product-list-tmp-text">
+					<h2 tmpval_eng="prod-template-title">Prodotto</h2>
+					<p tmpval_eng="prod-template-price">70€</p>
+				</div>
+				</div>
+				<div class="product-list-tmp-cart">
+				<a tmpval_eng="prod-template-cart" tmpval="button_ng_rp"><p>scopri di più</p></a>
+				</div>
+			</section></div>
+	</section></div></body><script src="/engine.js"></script>

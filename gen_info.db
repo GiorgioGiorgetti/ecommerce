@@ -1,0 +1,2 @@
+{"_id":"company_info","title_img":"","logo_img":"","contacts":{"phone1":"","phone2":"","email":"","whatsapp":""},"link":{"twitter":"","linkedin":"","instagram":"","facebook":""},"p_iva":"","address":"","privacy_policy_link":""}
+{"_id":"stripe_setting","sk":"","shipping_country":null,"currency":{"currency":"Euro","code":"EUR","symbol":"€"}}

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/admin/home.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+      <div class="nav_left_div">
+        <a id="top_nav_menu" class="top_nav_menu"><img src="/icon/menu_black.png" alt=""></a>
+      </div>
+    </nav>
+    <div class="body">
+
+        <div class="margin_page">
+
+            <div class="side_nav" id="side_nav">
+              <div class="side_nav_space_div">
+              </div>
+                <ul>
+                    <li id="home"><img src="/icon/home.png" alt=""><a>Home</a></li>
+                    <li id="product"><img src="/icon/product.png" alt=""><a>Product</a></li>
+                    <li id="group"><img src="/icon/group.png" alt=""><a>Group</a></li>
+                    <li id="orders"><img src="/icon/orders.png" alt=""><a>orders</a></li>
+                    <li id="web_page"><img src="/icon/web.png" alt=""><a>web page</a></li>
+                    <li id="payments"><img src="/icon/payments.png" alt=""><a>payment settings</a></li>
+                    <li id="settings"><img src="/icon/settings.png" alt=""><a>info settings</a></li>
+                    <li id="settings"><img src="/icon/info.png" alt=""><a href="/admin/info/tutorial.html">Help Center</a></li>
+                  </ul>
+            </div>
+  
+
+            <div class="main_page" id="main_page">
+
+
+              <!-- home -->
+              <section id="home_pg" class="hide home">
+                <div class="home_main column">
+
+                  <div class="home_dashboard_title box">
+                    <div class="home_dashboard_title_box">
+                      <div class="flex home_dashboard_title_hp">
+                        <p>admin</p>
+                        <p class="home_dashboard_title_hp_bold">Dashboard</p>
+                      </div>
+                      <div class="home_dashboard_title_lp">
+                        <p>manage your products</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex home_main_dashboard_data_div">
+                    
+                    <div class="box home_data_div">
+                      <div class="home_data_title"><p>orders</p></div>
+                      <div class="home_data_div_big_data"><p class="id_home_data"></p></div>
+                      <div class="home_data_grid">
+                        <div>
+                          <p class="home_data_grid_nm id_home_data"></p>
+                          <p class="home_data_grid_tlt">today</p>
+                        </div>
+                        <div >
+                          <p class="home_data_grid_nm id_home_data"></p>
+                          <p class="home_data_grid_tlt">month</p>
+                        </div>
+                        <div>
+                          <p class="home_data_grid_nm id_home_data"></p>
+                          <p class="home_data_grid_tlt">year</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- new product page -->
+              <section id="new_product_pg" class="box hide new_product_pg">
+                  <div class="page_title"> new product </div>
+                  <div class="new_product_pg_content ">
+                    <div class="box column">
+                      <div><label class="px5_right_space">id</label><input type="text" placeholder="id" class="input"></div>
+                      <div><label class="px5_right_space">name</label><input type="text" placeholder="name" class="input"></div>
+                    </div>
+                    <div class="flex box">
+                      <div class="new_product_pg_first_image">
+                        <img class=" id-new_product_pg_img new_product_pg_first_image_img">
+                      </div>
+                      <div class="column">
+                        <label>front image</label>
+                        <label for="new_product_pg_front_image" class="file_btn">Choose File</label>
+                        <input type="file" class="hide" id="new_product_pg_front_image">
+                      </div>
+                    </div>
+                    <div class="box column">
+                      <div>
+                        <label class="px5_right_space">images</label>
+                        <label for="new_product_pg_images" class="file_btn">Choose File</label>
+                        <input type="file" class="hide" id="new_product_pg_images">
+                      </div>
+                      <div class="new_product_pg_images flex id-new_product_pg_imgs">
+              
+                      </div>
+                    </div>
+                    <div class="box column new_product_pg_price_quantity_cnt">
+                      <div>
+                        <label>price</label>
+                        <input type="number" class="input_n1" value="0.00">
+                        <label id="currency_label">€</label>
+                      </div>
+                      <div>
+                        <label>quantity</label>
+                        <input type="number" class="input_n1" max="999999999" value="0"> 
+                      </div>
+                    </div>
+                    <div class="box column">
+                      <div>
+                        <label>options</label>
+                        <input type="checkbox">
+                      </div>
+                      <div class="id-new_pg_option_page hide">
+                        <section>
+                          <div class="border_top new_product_pg_option column">
+                            <div class="new_product_pg_option_space flex">
+                              <div>
+                                <label class="px5_right_space">option name</label>
+                                <input type="text" class="input" placeholder="Color">
+                              </div>
+                              <!-- <a class="delete_button">x</a> -->
+                            </div>
+                            <div class="new_product_pg_option_space  new_product_pg_option_flex_btn flex">
+                              <div>
+                                <label class=" px5_right_space">option value  </label>
+                                <input type="text" class="input" placeholder="red,blue,green">
+                              </div>
+                              <a class="sub_button">add option</a>
+                            </div>
+                          </div>
+                        </section>
+                        <section class="hide">
+                          <div class="border_top column  new_product_pg_option_list">
+                          </div>
+                        </section>
+                        <section class="hide new_pg_option_page_section_list_cnt">
+                          <div class="border_top column new_product_pg_grid_val id-new_product_pg_val_list">
+                            <div class="new_product_pg_grid">
+                              <div><input type="checkbox"></div>
+                              <div><label>values</label></div>
+                              <div><label>price</label></div>
+                              <div><label>quantity</label></div>
+                            </div>
+                          </div>
+                        </section>
+                        <section class="hide">
+                          <div class="new_product_pg_grid">
+                            <div><input type="checkbox"></div>
+                            <div><p>maglietta/nera/verde/gialla/blu/rossa</p></div>
+                            <div><input type="number" class="input_n1"> <label id="currency_label">€</label></div>
+                            <div><input type="number" class="input_n1"></div>
+                            <!-- <a class="delete_button">x</a> -->
+                          </div>
+                        </section>
+                      </div>
+                    </div>
+                    <div class="box column">
+                      <label>description</label>
+                      <textarea rows="10"></textarea>
+                    </div>
+                    <div class="new_product_pg_button"><a class="sub_button">add new product</a></div>
+                  </div>
+              </section>  
+
+              <!-- product page -->
+              <section id="product_pg" class="hide">
+                  <div class="page_title"> products </div>
+                  <div class="box products_pg_body">
+                      <div class="products_pg_grid">
+                          <div class="product_pg_grid_img_label"><label>image</label></div>
+                          <div class="products_pg_grid_border"><label>id</label></div>
+                          <div class="products_pg_grid_border"><label>name</label></div>
+                          <div class="products_pg_grid_border"><label>price</label></div>
+                          <div class="products_pg_grid_border"><label>quantity</label></div>
+                          <div class="products_pg_grid_border"></div>
+                      </div>
+                      <section>
+                          <div class="hide">
+                              <div class="product_pg_grid_img"><img src="" alt=""></div>
+                              <div class="products_pg_grid_border"><label>id</label></div>
+                              <div class="products_pg_grid_border"><label>name</label></div>
+                              <div class="products_pg_grid_border"><input type="number"><label id="currency_label">€</label></div>
+                              <div class="products_pg_grid_border"><input type="number"></div>
+                              <div class="products_pg_grid_border"><a class="sub_button">edit</a></div>
+                          </div>
+                      </section>
+                      <div class="products_pg_new_pr_btn">
+                        <a class="id-new_product sub_button">add new product</a>
+                      </div>
+                  </div>
+              </section>
+
+              <!-- update product -->
+              <section id="update_product_pg" class=" column hide">
+                <div class="page_title"> update product </div>
+                <div class="new_product_pg_content">
+                    <div class="box column">
+                        <div class="flex update_product_pg" ><div><label class="px5_right_space">id</label><label class="id-update_product_pg_id"></label></div><a class="delete_product_button">delete product</a></div>
+                        <div><label class="px5_right_space">name</label><input type="text" placeholder="name" class="input"></div>
+                    </div>
+                    <div class="flex box new_product_pg_content_front_img_div">
+                        <div class="new_product_pg_first_image">
+                          <img class="new_product_pg_first_image_img">
+                        </div>
+                        <div class="column">
+                          <div class="update_product_pg_titl_btn">
+                            <label >front image</label>
+                            <label for="update_product_pg_front_img" class="file_btn">Choose File</label>
+                            <input type="file" id="update_product_pg_front_img" class="hide">
+                          </div>
+                          <a class="delete_product_button update_product_pg_delete">remove</a>
+                        </div>
+                    </div>
+                    <div class="box column update_product_pg_imgs_box">
+                        <div class="update_product_pg_titl_btn">
+                          <label class="px5_right_space">images</label>
+                          <label for="update_product_pg_imgs" class="file_btn">Choose File</label>
+                          <input type="file" id="update_product_pg_imgs" class="hide">
+                        </div>
+                        <div class="id_update_product_pg_img_cnt new_product_pg_images flex update_product_pg_img_cnt"></div>
+                    </div>
+                    <div class="box flex update_product_pg_space">
+                      <div >
+                        <label>price</label>
+                        <input type="number" class="input_n1">
+                        <label id="currency_label">€</label>
+                      </div>
+                      <div>
+                        <label>quantity</label>
+                        <input type="number" class="input_n1">
+                      </div>
+                    </div>
+                    <div class="box column">
+                        <label>description</label>
+                        <textarea rows="10"></textarea>
+                    </div>
+                    <div class="box update_product_pg_grid">
+                        <section class="update_product_pg_grid_sct">
+                            <div class="update_product_pg_grid_sct_cnt">
+                                <div class="new_product_pg_grid">
+                                <div><input type="checkbox"></div>
+                                <div><label>values</label></div>
+                                <div><label>price</label></div>
+                                <div><label>quantity</label></div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="hide">
+                            <div class="new_product_pg_grid">
+                                <div><input type="checkbox"></div>
+                                <div><p>maglietta/nera/verde/gialla/blu/rossa</p></div>
+                                <div><input type="number" class="input_n1"> <label id="currency_label">€</label></div>
+                                <div><input type="number" class="input_n1"></div>
+                                <!-- <a class="delete_button">x</a> -->
+                            </div>
+                        </section>
+                    </div>
+                </div>
+              </section>
+
+              <!-- group page -->
+              <section id="group_pg" class="box hide">
+                <div class="page_title"> groups </div>
+                <div class="group_pg_content column">
+                    <div class=" column group_pg_content_list id-group_pg_content_list">
+                        <section class="hide">
+                            <div class="group_pg_row">
+                                <div><p>test</p></div>
+                                <a class="sub_button"> edit </a>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="group_pg_button">
+                        <a class="sub_button id_create_group"> create group </a>
+                    </div>
+                </div>
+              </section>
+
+              <!-- new group page -->
+              <section id="new_group_pg" class="hide">
+                <div class="page_title"> new group </div>
+                <div class="new_group_pg_content id_new_group_pg_content  column">
+                    <div class="box new_group_pg_name">
+                        <div><label>group name</label><input type="text" placeholder="name" class="input"></div>
+                        <div><input type="checkbox"><label>main group</label></div>
+                    </div>
+                    <div class="box new_group_grid_list">
+                        <div class="new_group_pg_row_grid">
+                          <div class="new_group_pg_row_grid_div"><p>id</p></div>
+                          <div class="new_group_pg_row_grid_div"><p>name</p></div>
+                        </div>
+                        <div class="new_group_pg_row_grid_cnt id_new_group_pg_row_grid_cnt">
+                        
+                        </div>
+                        <section class="hide">
+                          <div class="new_group_pg_row_grid_line new_group_pg_row_grid">
+                              <div class="new_group_pg_row_grid_div"><p>id</p></div>
+                              <div class="new_group_pg_row_grid_div"><p>name</p></div>
+                              <div><a class="delete_product_button">remove</a></div>
+                          </div>
+                        </section>
+                        <div class="new_group_pg_row_add"><a class=" id_new_group_pg_a_prd">add product</a></div>
+                    </div>
+
+                    <div class="box new_group_pg_list_page hide_imp id_new_group_pg_list_page">
+                      <div class="new_group_pg_list_page_grid">
+                        <div class="new_group_pg_row_grid_line new_group_pg_row_grid new_group_pg_list_page_grid_page grid_page_title">
+                          <div class="new_group_pg_row_grid_div"></div>
+                          <div class="new_group_pg_row_grid_div"><p>id</p></div>
+                          <div><p>name</p></div>
+                        </div>
+                          <section class="hide">
+                              <div class="new_group_pg_row_grid_line new_group_pg_row_grid new_group_pg_list_page_grid_page">
+                                  <div class="new_group_pg_row_grid_div"><input type="checkbox"></div>
+                                  <div class="new_group_pg_row_grid_div"><p>id</p></div>
+                                  <div><p>name</p></div>
+                              </div>
+                          </section>
+                      </div>
+                      <div class="center"><a class="id_new_group_pg_confirm sub_button">confirm</a></div>
+                    </div>
+
+                    <div class="center new_product_group_a"><a class="sub_button id_new_group_pg_add_group">add group</a></div>
+                </div>
+              </section>
+
+              <!-- update group page -->
+              <section id="update_group_pg" class="hide">
+                <div class="page_title">  </div>
+                <div class="new_group_pg_content id_new_group_pg_content  column">
+                    <div class="box new_group_pg_name new_group_pg_name_upg">
+                        <div><input type="checkbox"><label>main group</label></div>
+                        <div class="update_group_delete_div"><a class="delete_button update_delete_group id-delete_group">remove group</a></div>
+                    </div>
+                    <div class="box new_group_grid_list">
+                        <div class="new_group_pg_row_grid">
+                          <div class="new_group_pg_row_grid_div"><p>id</p></div>
+                          <div class="new_group_pg_row_grid_div"><p>name</p></div>
+                        </div>
+                        <div class="new_group_pg_row_grid_cnt id_new_group_pg_row_grid_cnt">
+                        
+                        </div>
+                        <section class="hide">
+                          <div class="new_group_pg_row_grid_line new_group_pg_row_grid">
+                              <div class="new_group_pg_row_grid_div"><p>id</p></div>
+                              <div class="new_group_pg_row_grid_div"><p>name</p></div>
+                              <div><a class="delete_product_button">remove</a></div>
+                          </div>
+                        </section>
+                        <div class="new_group_pg_row_add"><a class=" id_new_group_pg_a_prd">add product</a></div>
+                    </div>
+
+                    <div class="box new_group_pg_list_page hide_imp id_new_group_pg_list_page">
+                      <div class="new_group_pg_list_page_grid">
+                        <div class="new_group_pg_row_grid_line new_group_pg_row_grid new_group_pg_list_page_grid_page grid_page_title">
+                          <div class="new_group_pg_row_grid_div"></div>
+                          <div class="new_group_pg_row_grid_div"><p>id</p></div>
+                          <div><p>name</p></div>
+                        </div>
+                          <section class="hide">
+                              <div class="new_group_pg_row_grid_line new_group_pg_row_grid new_group_pg_list_page_grid_page">
+                                  <div class="new_group_pg_row_grid_div"><input type="checkbox"></div>
+                                  <div class="new_group_pg_row_grid_div"><p>id</p></div>
+                                  <div><p>name</p></div>
+                              </div>
+                          </section>
+                      </div>
+                      <div class="center"><a class="id_new_group_pg_confirm sub_button">confirm</a></div>
+                    </div>
+
+                    <div class="center new_product_group_a"><a class="sub_button id_new_group_pg_add_group">add group</a></div>
+                </div>
+              </section>
+
+              <!-- orders  list page -->
+              <section id="orders_pg" class="hide box">
+                <div class="page_title">orders</div>
+                <div class="orders_pg_main_div id_orders_pg_grid_list">
+                  <div class="orders_pg_main_div_grid ">
+                    <div><p>id</p></div>
+                    <div><p>email</p></div>
+                    <div><p>amount</p></div>
+                    <div><p>date</p></div>
+                    <div></div>
+                  </div>
+                  <section class="hide">
+                    <div class="orders_pg_main_div_grid">
+                      <div><p>id</p></div>
+                      <div><p>email</p></div>
+                      <div><p>amount</p></div>
+                      <div><p>date</p></div>
+                      <div><a class="sub_button">view</a></div>
+                    </div>
+                  </section>
+                </div>
+              </section>
+
+              <!-- order page -->
+              <section id="order_view_pg" class="hide box">
+                <div class="page_title"></div>
+                <div class="order_view_pg_main_div order_view_pg_main">
+                  <div class="order_view_pg_top_div">
+                    <div><p>id: </p><p class="id-p"></p></div>
+                    <div><p>amount: </p><p class="id-p"></p></div>
+                    <div><p>date: </p><p class="id-p"></p></div>
+                  </div>
+                  <div class="order_view_pg_address_div">
+                    <div class="order_view_pg_address_div_div">
+                      <div><p>address 1: </p><p class="id-p"></p></div>
+                      <div><p>address 2: </p><p class="id-p"></p></div>
+                      <div><p>city: </p><p class="id-p"></p></div>
+                      <div><p>name: </p><p class="id-p"></p></div>
+                    </div>
+                    <div class="order_view_pg_address_div_div">
+                      <div><p>country: </p><p class="id-p"></p></div>
+                      <div><p>postal code: </p><p class="id-p"></p></div>
+                      <div><p>state: </p><p class="id-p"></p></div>
+                      <div><p>email: </p><p class="id-p"></p></div>
+                      <div><p>phone: </p><p class="id-p"></p></div>
+                    </div>
+                  </div>
+                  <div class="order_view_pg_grid_div_content">
+                    <div class="order_view_pg_grid_div id-div_grid">
+                      <div class="order_view_pg_grid_div_div">
+                        <div><p>id</p></div>
+                        <div><p>option</p></div>
+                        <div><p>quantity</p></div>
+                        <div><p>unit amount</p></div>
+                      </div>
+                      <section class="hide">
+                        <div class="order_view_pg_grid_div_div">
+                          <div><p></p></div>
+                          <div><p></p></div>
+                          <div><p></p></div>
+                          <div><p></p></div>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- payment settings page -->
+              <section id="payment_settings_page" class="hide box">
+
+                <div class="page_title">payments Settings</div>
+
+                <div class="payment_settings_page_main">
+
+                  <div class="payment_settings_page_main_div ">
+                    <p class="payment_settings_page_main_title">Stripe Secret key</p>
+                    <div class="payment_settings_page_stripe_div">
+                      <input type="text" id="stripe_sk_input">
+                      <a class="sub_button" id="stripe_sk_button"> upload </a>
+                    </div>
+                    <p class="payment_settings_page_main_title">Currency</p>
+                    <div class="payment_settings_page_stripe_div">
+                      <select id="Currency" class="payment_settings_page_Currency">
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="payment_settings_page_main_div">
+                    <p class="payment_settings_page_main_title">paesi di spedizione</p>
+                    <div class="payment_settings_page_main_div">
+
+                      <div class="payment_settings_page_shipping_div">
+                        <p>spedisci in tutti i paesi: </p>
+                        <select id="shipping_select_all">
+                          <option value = true>SI</option>
+                          <option value = false>NO</option>
+                        </select>
+                      </div>
+
+                      <div class="payment_settings_page_shipping_div hide" id="shipping_select_cnt">
+                        <p>codice paese:</p> 
+                        <input type="text" placeholder="IT" id="shipping_code_input"> 
+                        <button class="sub_button" id="shipping_code_button"> Aggiungi Paese </button>
+                      </div>
+                      
+                    </div>
+
+                    <div class="shipping_html_element_parent" id="shipping_html_element_parent">
+                      <div id="shipping_html_element"><p id="shipping_name">italia</p><p id="shipping_code">IT</p><a class="delete_button" id="shipping_remove">x</a></div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </section>
+
+              <!-- info setting page -->
+              <section id="info_setting_page" class="hide box">
+
+                <div class="page_title">Info Settings</div>
+                
+                <div class="info_setting_page_main_cnt">
+
+                  <div class="flex">
+                    <div class="new_product_pg_first_image">
+                      <img class="new_product_pg_first_image_img">
+                    </div>
+                    <div class="column">
+                      <label>Page image</label>
+                      <label for="info_setting_page_img" class="file_btn">Choose File</label>
+                      <input type="file" class="hide" id="info_setting_page_img">
+                    </div>
+                  </div>
+
+                  <div class="flex">
+                    <div class="new_product_pg_first_image">
+                      <img class="new_product_pg_first_image_img">
+                    </div>
+                    <div class="column">
+                      <label>Logo image</label>
+                      <label for="info_setting_page_img_logo" class="file_btn">Choose File</label>
+                      <input type="file" class="hide" id="info_setting_page_img_logo">
+                    </div>
+                  </div>
+
+                  <div class="box column">
+                    <div><label class="px5_right_space">linkedin</label><input type="text" placeholder="https://inkedin.com/...." class="input"></div>
+                    <div><label class="px5_right_space">twitter</label><input type="text" placeholder="https://twitter.com/...." class="input"></div>
+                    <div><label class="px5_right_space">facebook</label><input type="text" placeholder="https://facebook.com/...." class="input"></div>
+                    <div><label class="px5_right_space">instagram</label><input type="text" placeholder="https://instagram.com/...." class="input"></div>
+                  </div>
+
+                  <div class="box column">
+                    <div><label class="px5_right_space">telefono1</label><input type="text" class="input"></div>
+                    <div><label class="px5_right_space">telefono2</label><input type="text" class="input"></div>
+                    <div><label class="px5_right_space">whatsapp</label><input type="text" class="input"></div>
+                    <div><label class="px5_right_space">email</label><input type="text" class="input"></div>
+                  </div>
+
+                  <div class="box column">
+                    <div><label class="px5_right_space">indirizzo</label><input type="text" class="input"></div>
+                    <div><label class="px5_right_space">P. iva</label><input type="text" class="input"></div>
+                    <div><label class="px5_right_space">Privacy Policy Link</label><input type="text" class="input"></div>
+                  </div>
+
+                </div>
+                
+              </section>
+
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/admin/home.js"></script>
+</html>
